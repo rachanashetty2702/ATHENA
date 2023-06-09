@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCELEROMETER" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ATHENA"
+        tools:targetApi="31">
+        <activity
+            android:name=".user.HealthDictionary"
+            android:exported="false" />
+        <activity
+            android:name=".user.RegisterNumberActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.SafetySOS"
+            android:exported="false" />
+        <activity
+            android:name=".user.PeriodsTracker"
+            android:exported="false" />
+        <activity
+            android:name=".user.MyAccount"
+            android:exported="false" />
+        <activity
+            android:name=".MoodMusic"
+            android:exported="false" />
+        <activity
+            android:name=".common.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".common.Login"
+            android:exported="false" />
+        <activity
+            android:name=".common.Welcome"
+            android:exported="false" />
+        <activity
+            android:name=".common.OnBoarding"
+            android:exported="false" />
+        <activity
+            android:name=".user.UserDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".common.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".user.ServiceMine"
+            android:enabled="true"
+            android:foregroundServiceType="location" />
+    </application>
+
+</manifest>

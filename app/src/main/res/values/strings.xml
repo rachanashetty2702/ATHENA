@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ATHENA</string>
+    <string name="logo_name">ATHENA</string>
+
+    <!--Strings for On boarding Screen-->
+    <!--Title-->
+    <string name="first_slide_title">Lady Health Assistant</string>
+    <string name="second_slide_title">A Health Dictionary</string>
+    <string name="third_slide_title">SOS Feature</string>
+
+    <!--Description-->
+    <string name="first_slide_desc">An Health Assistant that tracks your periods and guides you with useful information.</string>
+    <string name="second_slide_desc">Search about health related topics and find their meaning.</string>
+    <string name="third_slide_desc">Instantly send distress signals and emergency alerts to pre-selected contacts for immediate help and assistance.</string>
+
+    <!--Button-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="lets_get_started">Lets Get Started</string>
+
+    <string name="tab1">Tab 1</string>
+
+</resources>
