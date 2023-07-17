@@ -50,7 +50,7 @@ public class OnBoarding extends AppCompatActivity {
     }
     public void skip(View view){
 
-        startActivity(new Intent(this, OnBoarding.class));
+        startActivity(new Intent(this, Welcome.class));
         finish();
     }
     public void next(View view){

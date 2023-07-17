@@ -80,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="68dp"
-                        android:layout_marginTop="45dp"
+                        android:layout_marginTop="50dp"
                         android:layout_toEndOf="@id/happyimage"
                         android:text="BLISS"
                         android:textColor="@color/pink_shade"
@@ -93,12 +93,15 @@
                         android:id="@+id/blissplay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_play_arrow_24"
-                        android:layout_marginStart="300dp"
+                        android:layout_marginStart="280dp"
                         android:layout_marginTop="45dp"
-                        android:onClick="play_Song">
+                        android:onClick="play_Song"
+                        android:src="@drawable/baseline_play_arrow_24"
+                        android:tint="@color/black">
 
                     </ImageButton>
+
+
 
                     <TextView
                         android:id="@+id/happy"
@@ -173,7 +176,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/baseline_play_arrow_24"
-                        android:layout_marginStart="300dp"
+                        android:layout_marginStart="280dp"
                         android:layout_marginTop="45dp"
                         android:onClick="play_Song1">
 
@@ -252,7 +255,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/baseline_play_arrow_24"
-                        android:layout_marginStart="300dp"
+                        android:layout_marginStart="280dp"
                         android:layout_marginTop="45dp"
                         android:onClick="play_Song2">
 
@@ -331,7 +334,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/baseline_play_arrow_24"
-                        android:layout_marginStart="300dp"
+                        android:layout_marginStart="280dp"
                         android:layout_marginTop="45dp"
                         android:onClick="play_Song3">
 
@@ -409,7 +412,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/baseline_play_arrow_24"
-                        android:layout_marginStart="300dp"
+                        android:layout_marginStart="280dp"
                         android:layout_marginTop="45dp"
                         android:onClick="play_Song4">
 
@@ -487,7 +490,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/baseline_play_arrow_24"
-                        android:layout_marginStart="300dp"
+                        android:layout_marginStart="280dp"
                         android:layout_marginTop="45dp"
                         android:onClick="play_Song5">
 

@@ -31,6 +31,10 @@ public class ServiceMine extends Service {
 
     boolean isRunning = false;
 
+    boolean isCooldown = false;
+    long lastShakeTime = 0;
+    long cooldownDuration = 5000; // 5 seconds cooldown period
+
     FusedLocationProviderClient fusedLocationClient;
 
     @Nullable
@@ -63,8 +67,8 @@ public class ServiceMine extends Service {
                     public void onSuccess(Location location) {
                         if (location != null) {
                             // Logic to handle location object
-                            double latitude = location.getAltitude();
-                            double longitude = location.getLongitude();
+                            double latitude = 12.866757397995368;
+                            double longitude = 74.92554925618353;
                             myLocation = "http://maps.google.com/maps?q=loc:"+latitude+","+longitude;
                         }else {
                             myLocation = "This is my location";
@@ -79,16 +83,21 @@ public class ServiceMine extends Service {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 if (sensorEvent != null) {
-                    float x_accl = sensorEvent.values[0];
-                    float y_accl = sensorEvent.values[1];
-                    float z_accl = sensorEvent.values[2];
+                    long currentTime = System.currentTimeMillis();
+                    if (!isCooldown && (currentTime - lastShakeTime) >= cooldownDuration) {
+                        float x_accl = sensorEvent.values[0];
+                        float y_accl = sensorEvent.values[1];
+                        float z_accl = sensorEvent.values[2];
 
-                    float floatSum = Math.abs(x_accl) + Math.abs(y_accl) + Math.abs(z_accl);
+                        float floatSum = Math.abs(x_accl) + Math.abs(y_accl) + Math.abs(z_accl);
 
-                    if (floatSum > 14) {
-                        Log.d("ShakeDetection", "Shake detected!");
-                        SmsManager manager = SmsManager.getDefault();
-                        manager.sendTextMessage("PhoneNumber", null, "Im in Trouble!\nSending My Location:\n" + myLocation, null, null);
+                        if (floatSum > 14) {
+                            Log.d("ShakeDetection", "Shake detected!");
+                            lastShakeTime = currentTime;
+                            isCooldown = true;
+                            SmsManager manager = SmsManager.getDefault();
+                            manager.sendTextMessage("PhoneNumber", null, "Im in Trouble!\nSending My Location:\n" + myLocation, null, null);
+                        }
                     }
                 }
             }

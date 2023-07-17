@@ -88,35 +88,17 @@ public class SafetySOS extends AppCompatActivity {
         }
 
     });
-
-
-
     public void stopService(View view) {
 
         Intent notificationIntent = new Intent(this,ServiceMine.class);
-        notificationIntent.setAction("stop");
+        notificationIntent.setAction("STOP");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             getApplicationContext().startForegroundService(notificationIntent);
             Snackbar.make(findViewById(android.R.id.content),"Service Stopped!", Snackbar.LENGTH_LONG).show();
         }
     }
 
-    public void testfn(View view){
-        SmsManager manager = SmsManager.getDefault();
-        String myLocation = "Test Location";
-
-        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
-        String ENUM = sharedPreferences.getString("ENUM","NONE");
-        if(!ENUM.equalsIgnoreCase("NONE")){
-            manager.sendTextMessage(ENUM,null,"Im in Trouble!\nSending My Location :\n"+myLocation,null,null);
-        }
-    }
-
     public void startServiceV(View view) {
-
-
-
-
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED  ) {
             Intent notificationIntent = new Intent(this,ServiceMine.class);

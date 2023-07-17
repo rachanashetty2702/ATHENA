@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lets_get_started"
             android:onClick="get_started"
-            android:background="@color/white"
+            android:background="@color/colorPrimary"
             android:visibility="invisible"/>
         <LinearLayout
             android:id="@+id/dots"

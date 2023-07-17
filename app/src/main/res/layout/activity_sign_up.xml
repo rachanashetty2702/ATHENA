@@ -178,7 +178,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="#00000000"
-                android:onClick="login"
+                android:onClick="LOGIN"
                 android:text="Login"
                 android:textColor="#594966"></Button>
 

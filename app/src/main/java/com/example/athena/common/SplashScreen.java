@@ -45,7 +45,7 @@ public class SplashScreen extends AppCompatActivity {
 
                 if(isFirstTime){
                     SharedPreferences.Editor editor= onBoardingScreen.edit();
-                    editor.putBoolean("firstTime",false);
+                    editor.putBoolean("firstTime", false);
                     editor.commit();
                     Intent intent = new Intent(getApplicationContext(), OnBoarding.class);
                     startActivity(intent);
